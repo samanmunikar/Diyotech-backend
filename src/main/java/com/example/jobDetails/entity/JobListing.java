@@ -1,4 +1,4 @@
-package entity;
+package com.example.jobDetails.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

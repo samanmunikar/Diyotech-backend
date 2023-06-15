@@ -1,7 +1,7 @@
-package service;
+package com.example.jobDetails.service;
 
-import Repository.JobRepository;
-import entity.JobListing;
+import com.example.jobDetails.Repository.JobRepository;
+import com.example.jobDetails.entity.JobListing;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,12 +10,9 @@ import java.util.Optional;
 
 @Service
 public class JobService {
-    private final JobRepository jobRepository;
-
     @Autowired
-    JobService(JobRepository jobRepository){
-        this.jobRepository = jobRepository;
-    }
+    JobRepository jobRepository;
+
 
     //READ ALL
     public List<JobListing> getAllJobs(){
