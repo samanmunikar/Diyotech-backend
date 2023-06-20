@@ -20,14 +20,14 @@ public class JobController {
     }
 
     //READ ONE BY ID
-    @GetMapping("/getOne/{jobId}")
+    @GetMapping("/getOneById/{jobId}")
     public JobListing getJobById(@PathVariable Long jobId){
         return jobService.getJobById(jobId);
     }
 
     //SAVE ONE
     @PostMapping("/saveOne")
-    public String saveOne(@RequestBody JobListing oneJob){
+    public String saveOneByJob(@RequestBody JobListing oneJob){
         return jobService.saveOneJob(oneJob);
     }
 
@@ -39,14 +39,14 @@ public class JobController {
 
     //UPDATE ONE
 
-    @PostMapping("/updateOne/{jobId}")
-    public String updateOne(@PathVariable Long jobId, @RequestBody JobListing jobListing){
+    @PostMapping("/updateOneById/{jobId}")
+    public String updateOneById(@PathVariable Long jobId, @RequestBody JobListing jobListing){
         return jobService.updateJobById(jobId, jobListing);
     }
 
     //DELETE ONE
-    @DeleteMapping("/deleteOne/{jobId}")
-    public String deleteOne(@PathVariable Long jobId){
+    @DeleteMapping("/deleteOneById/{jobId}")
+    public String deleteOneById(@PathVariable Long jobId){
         return jobService.deleteById(jobId);
     }
 
@@ -55,12 +55,4 @@ public class JobController {
     public String deleteAll(){
         return jobService.deleteAll();
     }
-
-
-    @GetMapping("/test")
-    public String test(){
-        return "Test";
-    }
-
-
 }
