@@ -14,45 +14,45 @@ public class JobController {
     JobService jobService;
 
     //READ ALL
-    @GetMapping("/getAll")
-    public List<JobListing> getAllJobs(){
+    @GetMapping("/getJobs")
+    public List<JobListing> getJobs(){
         return jobService.getAllJobs();
     }
 
     //READ ONE BY ID
-    @GetMapping("/getOneById/{jobId}")
+    @GetMapping("/getJobById/{jobId}")
     public JobListing getJobById(@PathVariable Long jobId){
         return jobService.getJobById(jobId);
     }
 
     //SAVE ONE
-    @PostMapping("/saveOne")
-    public String saveOneByJob(@RequestBody JobListing oneJob){
+    @PostMapping("/saveJob")
+    public String saveJob(@RequestBody JobListing oneJob){
         return jobService.saveOneJob(oneJob);
     }
 
     //SAVE ALL
-    @PostMapping("/saveAll")
-    public String saveAll(@RequestBody List<JobListing> allJobs){
+    @PostMapping("/saveJobs")
+    public String saveJobs(@RequestBody List<JobListing> allJobs){
         return jobService.saveAllJob(allJobs);
     }
 
     //UPDATE ONE
 
-    @PostMapping("/updateOneById/{jobId}")
-    public String updateOneById(@PathVariable Long jobId, @RequestBody JobListing jobListing){
+    @PostMapping("/updateJobById/{jobId}")
+    public String updateJobById(@PathVariable Long jobId, @RequestBody JobListing jobListing){
         return jobService.updateJobById(jobId, jobListing);
     }
 
     //DELETE ONE
-    @DeleteMapping("/deleteOneById/{jobId}")
-    public String deleteOneById(@PathVariable Long jobId){
+    @DeleteMapping("/deleteJobById/{jobId}")
+    public String deleteJobById(@PathVariable Long jobId){
         return jobService.deleteById(jobId);
     }
 
     //DELETE ALL
-    @DeleteMapping("/deleteAll")
-    public String deleteAll(){
+    @DeleteMapping("/deleteJobs")
+    public String deleteJobs(){
         return jobService.deleteAll();
     }
 }
