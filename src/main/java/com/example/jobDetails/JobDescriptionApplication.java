@@ -1,4 +1,4 @@
-package com.example.jobDescription;
+package com.example.jobDetails;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
